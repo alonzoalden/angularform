@@ -1,7 +1,11 @@
 angular.module('greeter')
 .directive('greetDisplay', function() {
   return {
-    scope: {},
+    scope: {
+      name: '<',
+      phone: '<',
+      comments: '<'
+    },
     restrict: 'E',
     controller: function() {},
     controllerAs: 'ctrl',

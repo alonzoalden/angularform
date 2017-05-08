@@ -1,4 +1,21 @@
 <div id="app" ng-click="ctrl.kill()">
-  asdfsf
+  <div class="jumbotron">
+    <h1>angular form</h1>
+  </div>
+  <app-form
+    addnew="addNew">
+
+  </app-form>
+
+<div class="container">
+  <table class="table table-striped">
+      <tr ng-repeat="user in users"
+          user="user"/>
+          <td>{{user.name}}</td>
+          <td>{{user.phone}}</td>
+          <td>{{user.email}}</td>
+      </tr>
+  </table>
+</div>
 
 </div>

@@ -1,0 +1,45 @@
+<form name="form" novalidate>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-2">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input ng-model="info.name" class="form-control" type="text" id="name" name="name"
+                            maxlength="30" placeholder="Name" ng-required="true" ng-disabled="expression" />
+                </div>
+            </div>
+            <div class="col-xs-4">
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input ng-model="info.phone" id="phone" name="phone"
+                           placeholder="(555) 555-5555" class="form-control" type="tel"
+                           ng-required="true"
+                           ng-disabled="expression" />
+                </div>
+            </div>
+            <div class="col-xs-4">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input ng-model="info.email" id="email" name="email"
+                           placeholder="user@email.com" class="form-control" type="tel"
+                           ng-required="true"
+                           ng-disabled="expression" />
+                </div>
+            </div>
+            <div class="col-xs-1">
+                <div class="form-group">
+                    <label>Options</label>
+                    <button class="btn btn-info" ng-click="disabled=false;" ng-show="disabled">Edit</button>
+                    <button class="btn btn-success" type="submit" ng-submit="addnew(info)" ng-click="addnew(info)" ng-show="!disabled">Save</button>
+                </div>
+            </div>
+        </div>
+        <div class="row" data-ng-show="form.$submitted">
+            <div class="col-lg-12">
+                <div class="alert alert-danger" data-ng-show="form.name.$error.required && form.$submitted">Recipient Name is a required field.</div>
+                <div class="alert alert-danger" data-ng-show="form.amount.$error.pattern && form.$submitted">The amount is invalid.</div>
+                <div class="alert alert-danger" data-ng-show="form.amount.$error.server && form.$submitted">The amount is not accepted. Must be between {{ product.minAmount }} and {{ product.maxAmount}}.</div>
+            </div>
+        </div>
+    </div>
+</form>

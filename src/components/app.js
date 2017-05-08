@@ -1,8 +1,26 @@
 angular.module('greeter', [])
-.controller('AppCtrl', function() {
-  this.kill = function() {
-    console.log('asdfasfasfKILLER');
+.controller('AppCtrl', function($scope) {
+
+  $scope.users = [{
+    name: 'bob',
+    phone: '(661) 582-9984',
+    email: 'bob@gmail.com',
+  },
+  {
+    name: 'bill',
+    phone: '(661) 432-9865',
+    email: 'bill@gmail.com'
+  }];
+
+
+  $scope.addNew = function(info) {
+    $scope.users.push({
+      name: info.name,
+      phone: info.phone,
+      email: info.email
+    })
   };
+
 })
 .directive('app', function() {
   return {
@@ -14,3 +32,4 @@ angular.module('greeter', [])
     templateUrl: 'templates/app.html'
   }
 });
+
