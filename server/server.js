@@ -8,6 +8,10 @@ var app = express();
 app.use(bodyParser.urlencoded({'extended':'true'}));
 app.use(bodyParser.json());
 
+app.get('/api/contact', function(req, res, next) {
+    res.send('COMPLETE');
+});
+
 var port = process.env.PORT || 8000;
 
 app.use(express.static(path.join(__dirname, '../')));

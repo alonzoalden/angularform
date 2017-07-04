@@ -1,11 +1,19 @@
 <div id="app" ng-click="ctrl.kill()">
-  <div class="jumbotron">
-    <h1>angular form</h1>
+  <div ng-controller="AppCtrl" class="jumbotron">
+    <h1>angular {{test.example}}</h1>
   </div>
-  <app-form
-    addnew="addNew">
+  <div ng-show="test.example">
+      WORKING
+      <app-form
+          addnew="addNew">
 
-  </app-form>
+      </app-form>
+  </div>
+  <div ng-show="!test.example">
+      LOADING 'SPINNER GIF'
+  </div>
+
+
 
 <div class="container">
   <table class="table table-striped">

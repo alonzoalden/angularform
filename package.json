@@ -4,7 +4,7 @@
   "description": "angular form ",
   "main": "/server/index.js",
   "scripts": {
-    "start": "live-server --host=127.0.0.1 --port=8400",
+    "start": "live-server --host=127.0.0.1",
     "test": "test"
   },
   "author": "alonzo alden",
